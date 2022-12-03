@@ -14,11 +14,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'text', 'author', 'image', 'group', 'pub_date')
-
-    def create(self, validated_data):
-        post = Post.objects.create(**validated_data)
-        return post
+        fields = '__all__'
 
 
 class GroupSerializer(serializers.ModelSerializer):
